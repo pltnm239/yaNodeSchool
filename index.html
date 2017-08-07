@@ -44,14 +44,15 @@
 <body>
   <main>
     <form id="myForm" action="">
-      <label>ФИО:<br><input type="text" name="fio"></label>
-      <label>Email:<br><input type="text" name="email"></label>
-      <label>Телефон:<br><input type="text" name="phone"></label>
+      <label>ФИО:<br><input type="text" name="fio" isValid="false"></label>
+      <label>Email:<br><input type="email" name="email" isValid="false"></label>
+      <label>Телефон:<br><input type="tel" name="phone" isValid="false"></label>
       <button type="submit" id="submitButton">Мне повезет!</button>
     </form>
     <div id="resultContainer">
       
     </div>
   </main>
+  <script src="index.js"></script>
 </body>
 </html>
