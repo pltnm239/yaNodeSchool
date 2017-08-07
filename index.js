@@ -44,11 +44,13 @@ class Form{
             this._submitButton.setAttribute('disabled', true);
 
             fetch(this._apiUrl, {mode: 'no-cors'})
-                .then(res => {
-                    console.log(this._apiUrl);
-                    console.log(this._resultContainer, res);
-                })
-                .catch(err => console.log('Error:', err));
+                .then(function(response) {
+                    return response.json();
+                }).then(function(json) {
+
+                }).catch(function(ex) {
+
+                });
         }
     }
 }
