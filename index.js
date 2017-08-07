@@ -59,7 +59,9 @@ window.MyForm = new Form('myForm',[
         name: 'phone',
         customValidity: e => {
             const value = e.target.value;
-            const phoneRegExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+            value.split('').filter(el => typeof +el === 'number');
+
+            const phoneRegExp = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
 
             e.target.setAttribute('isValid', true);
 
