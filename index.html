@@ -5,53 +5,15 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>Test form</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-    body, html{
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-    }
-    main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      font-size: 14px;
-    }
-    form#myForm{
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-      max-height: 300px;
-    }
-    #myForm input{
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid rgba(0,0,0,.2);
-      height: 30px;
-      padding: 0 5px;
-      margin-bottom: 20px;
-      font-family: 'Open Sans', sans-serif;
-    }
-    #myForm input.error{
-      border: 1px solid red;
-    }
-    #myForm button{
-      width: 100%;
-      height: 30px;
-      font-family: 'Open Sans', sans-serif;
-    }
-  </style>
 </head>
 <body>
   <main>
-    <form id="myForm">
-      <label>ФИО:<br><input type="text" name="fio" isValid="false" placeholder="Имя Фамилия Отчество"></label>
-      <label>Email:<br><input type="email" name="email" isValid="false" placeholder="mail@yandex.ru"></label>
-      <label>Телефон:<br><input type="tel" name="phone" isValid="false" placeholder="+7(999)999-99-99"></label>
+    <form id="myForm" action="index.html">
+      <label>ФИО:<br><input type="text" name="fio" data-valid="false"></label>
+      <label>Email:<br><input type="email" name="email" data-valid="false" placeholder="mail@yandex.ru"></label>
+      <label>Телефон:<br><input type="tel" name="phone" data-valid="false" placeholder="+7(999)999-99-99"></label>
       <button type="submit" id="submitButton">Мне повезет!</button>
     </form>
     <div id="resultContainer">

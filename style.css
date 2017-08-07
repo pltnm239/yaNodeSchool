@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body, html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 12px;
+}
+#myForm{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-height: 300px;
+  margin-top: -150px;
+  padding: 0 20px;
+}
+#myForm input{
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.2);
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  transition: 0.2s;
+}
+#myForm label{
+  color: #605d5d;
+}
+#myForm input:focus{
+  border: 1px solid #ffdb4d;
+  transition: 0.2s;
+}
+#myForm input.error{
+  border: 1px solid red;
+  transition: 0.2s;
+}
+#myForm button{
+  width: 100%;
+  height: 32px;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffdb4d;
+  border-radius: 2px;
+  color: black;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+#myForm button[disabled]{
+  opacity: 0.3;
+}
+#myForm button:not([disabled]):hover{
+  background: #ffd633;
+}
