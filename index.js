@@ -40,7 +40,7 @@ class Form{
         if(!this.validate().isValid) {
             this._invalidInputs.forEach(el => el.input.classList.add('error'));
         }else{
-            this._submitButton.innerText('Отправлено');
+            this._submitButton.innerText = 'Отправлено';
             this._submitButton.setAttribute('disabled', true);
 
             fetch(this._apiUrl, {mode: 'no-cors'})

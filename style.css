@@ -56,7 +56,8 @@ main{
   outline: none;
 }
 #myForm button[disabled]{
-  opacity: 0.3;
+  opacity: 0.5;
+  background: rgba(0,0,0,.2);
 }
 #myForm button:not([disabled]):hover{
   background: #ffd633;
