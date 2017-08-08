@@ -49,11 +49,15 @@ class Form{
     }
     _responseHandler(data){
         this._resultContainer.classList.add(data.status);
+        if(data.status === 'success'){
+            this._resultContainer.innerHTML = 'Вы приняты!';
+        }
         if(data.status === 'error'){
             this._resultContainer.innerHTML = `<p>${data.reason}</p>`;
         }
         if(data.status === 'progress'){
             setTimeout(() => this.submit(), data.timeout);
+            this._resultContainer.innerHTML = 'Пожалуйста, подождите...';
         }
     }
 }

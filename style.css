@@ -11,14 +11,15 @@ main{
   align-items: center;
   flex-direction: column;
   height: 100%;
+  margin: 0 20px;
   font-size: 12px;
 }
 #myForm{
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 100%;
+  max-width: 300px;
   max-height: 300px;
-  padding: 0 20px;
 }
 #myForm input{
   width: 100%;
@@ -71,8 +72,8 @@ main{
   color: red;
 }
 #resultContainer.progress{
-
+  color: rgba(0,0,0,.4);
 }
 #resultContainer.success{
-  background: #ffdb4d;
+  color: black;
 }
