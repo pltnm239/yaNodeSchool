@@ -43,11 +43,14 @@ class Form{
             this._submitButton.innerText = 'Отправлено';
             this._submitButton.setAttribute('disabled', true);
 
-            fetch(this._apiUrl)
-                .then((res) => {
-                    return response.json();
-                });
+            fetch(this._apiUrl, {mode: 'no-cors'})
+                .then(response => response.json())
+                .then(data => this._innerResponse(data));
         }
+    }
+    _innerResponse(data){
+        this._resultContainer.classList.add(data.status);
+        this._resultContainer.innerHTML = `<p>${data.reason}</p>`;
     }
 }
 window.MyForm = new Form('myForm', 'resultContainer', [
