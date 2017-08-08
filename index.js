@@ -41,7 +41,6 @@ class Form{
         }else {
             this._submitButton.innerText = 'Отправлено';
             this._submitButton.setAttribute('disabled', true);
-
             fetch(this._apiUrl)
                 .then(response => response.json())
                 .then(data => this._responseHandler(data));
