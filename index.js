@@ -3,7 +3,7 @@ class Form{
         this._form = document.querySelector(`form#${formId}`);
         this._form.addEventListener('submit', e => {
             e.preventDefault();
-            this.submit(e);
+            this.submit();
         });
         this._inputs = arrWithInputNames.map(el => {
             const input = this._form.querySelector(`input[name="${el.name}"]`);
@@ -34,8 +34,7 @@ class Form{
             if(data[el.name]) el.input.value = data[el.name];
         });
     }
-    submit(e){
-        e.preventDefault();
+    submit(){
         this._inputs.forEach(el => el.input.classList.remove('error'));
         if(!this.validate().isValid) {
             this._invalidInputs.forEach(el => el.input.classList.add('error'));
@@ -43,14 +42,19 @@ class Form{
             this._submitButton.innerText = 'Отправлено';
             this._submitButton.setAttribute('disabled', true);
 
-            fetch(this._apiUrl, {mode: 'no-cors'})
+            fetch(this._apiUrl)
                 .then(response => response.json())
-                .then(data => this._innerResponse(data));
+                .then(data => this._responseHandler(data));
         }
     }
-    _innerResponse(data){
+    _responseHandler(data){
         this._resultContainer.classList.add(data.status);
-        this._resultContainer.innerHTML = `<p>${data.reason}</p>`;
+        if(data.status === 'error'){
+            this._resultContainer.innerHTML = `<p>${data.reason}</p>`;
+        }
+        if(data.status === 'progress'){
+            setTimeout(() => this.submit(), data.timeout);
+        }
     }
 }
 window.MyForm = new Form('myForm', 'resultContainer', [
