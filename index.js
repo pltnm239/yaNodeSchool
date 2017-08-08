@@ -39,17 +39,13 @@ class Form{
         this._inputs.forEach(el => el.input.classList.remove('error'));
         if(!this.validate().isValid) {
             this._invalidInputs.forEach(el => el.input.classList.add('error'));
-        }else{
+        }else {
             this._submitButton.innerText = 'Отправлено';
             this._submitButton.setAttribute('disabled', true);
 
-            fetch(this._apiUrl, {mode: 'no-cors'})
-                .then(function(response) {
+            fetch(this._apiUrl)
+                .then((res) => {
                     return response.json();
-                }).then(function(json) {
-
-                }).catch(function(ex) {
-
                 });
         }
     }
@@ -85,4 +81,3 @@ window.MyForm = new Form('myForm', 'resultContainer', [
         }
     }
 ]);
-
