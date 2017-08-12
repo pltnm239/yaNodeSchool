@@ -45,7 +45,7 @@
         {
             name: 'email',
             customValidity: value => {
-                const emailRegExp = /^([a-z0-9_\.-]+)@(yandex\.ru|yandex\.ua|yandex\.by|yandex\.bz|yandex\.com|ya\.ru)$/;
+                const emailRegExp = /^([a-z0-9_\.-]+)@(yandex\.ru|yandex\.ua|yandex\.by|yandex\.kz|yandex\.com|ya\.ru)$/;
                 return emailRegExp.test(value);
             }
         },
