@@ -58,7 +58,7 @@
                     .map(digit => +digit)
                     .filter(digit => !isNaN(digit))
                     .reduce((sum, digit) => sum + digit, 0);
-                return digitsSum <= 30 && phoneRegExp.test(value);
+                return (digitsSum <= 30) && phoneRegExp.test(value);
             }
         }
     ];
